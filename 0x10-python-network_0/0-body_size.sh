@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Bash script to retrieve the size of the response body from a given URL using curl
+
 # Function to display usage message
 display_usage() {
     echo "Usage: $0 <URL>"
@@ -13,7 +15,7 @@ fi
 
 url="$1"
 
-# Use curl to send a request and retrieve the body size
+# Use curl to send a request and retrieve the body size (with -s for silent mode)
 response=$(curl -sI "$url")
 
 # Extract content length from the response headers
@@ -25,5 +27,4 @@ if [ -z "$content_length" ]; then
     exit 1
 fi
 
-echo "Size of the body: ${content_length} bytes"
-
+echo "Size of the body: ${content_length} bytes"I
