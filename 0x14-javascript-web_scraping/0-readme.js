@@ -1,6 +1,7 @@
 #!/usr/bin/node
-// script that reads and prints the content of a file.
-
+/*
+ script that reads and prints the content of a file.
+*/
 import sys
 
 def read_file(file_path):
