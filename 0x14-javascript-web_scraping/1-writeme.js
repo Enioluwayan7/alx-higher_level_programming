@@ -12,5 +12,5 @@ fs.writeFile(filePath, stringToWrite, 'utf8', (err) => {
     console.error(err);
     return;
   }
-  console.log(`String written to file ${filePath}`);
+  console.log('The file has been saved!');
 });
