@@ -2,15 +2,22 @@
 
 const fs = require('fs');
 
-// Get the file path and string to write from the arguments
+// Get the file path and string to write from command-line arguments
 const filePath = process.argv[2];
 const stringToWrite = process.argv[3];
 
-// Write the string to the file in UTF-8 encoding
-fs.writeFile(filePath, stringToWrite, 'utf8', (err) => {
-  if (err) {
-    console.error(err);
+// Check if both arguments are provided
+if (!filePath || !stringToWrite) {
+  console.error('Usage: ./writeToFile.js <file-path> <string-to-write>');
+  process.exit(1);
+}
+
+// Write the string to the file with UTF-8 encoding
+fs.writeFile(filePath, stringToWrite, 'utf8', (error) => {
+  if (error) {
+    console.error('Error writing to file:', error);
     return;
   }
-  console.log('The file has been saved!');
+
+  console.log(`Successfully written to ${filePath}`);
 });
