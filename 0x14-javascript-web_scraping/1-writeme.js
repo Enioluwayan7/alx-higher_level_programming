@@ -1,4 +1,4 @@
-#!/usr/bin/node
+#!/usr/bin/env node
 
 const fs = require('fs');
 
@@ -8,9 +8,9 @@ const stringToWrite = process.argv[3];
 
 // Write the string to the file in UTF-8 encoding
 fs.writeFile(filePath, stringToWrite, 'utf8', (err) => {
-	if (err) {
-		console.error(err);
-		return;
-	}
-	console.log('The file has been saved!');
+  if (err) {
+    console.error(err);
+    return;
+  }
+  console.log('The file has been saved!');
 });
